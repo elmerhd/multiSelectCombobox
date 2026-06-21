@@ -124,7 +124,7 @@ Triggered whenever selection changes.
     label="Skills"
     options={skills}
     value={selectedSkills}
-    onchange={handleChange}>
+    onselectionchange={handleChange}>
 </c-multi-select-combobox>
 ```
 ---

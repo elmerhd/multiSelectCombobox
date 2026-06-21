@@ -200,10 +200,12 @@ export default class MultiSelectCombobox extends LightningElement {
     dispatchSelectionChange() {
         const values = this.selectedOptions.map(o => o.value);
         this._value = values;
-
+        this.value = values;
         this.dispatchEvent(
-            new CustomEvent('change', {
-                detail: values
+            new CustomEvent('selectionchange', {
+                detail: {
+                    value: this.value
+                } 
             })
         );
     }
