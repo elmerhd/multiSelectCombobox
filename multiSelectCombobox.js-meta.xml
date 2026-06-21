@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
 	<isExposed>false</isExposed>
-	<apiVersion>67.0</apiVersion>
+	<apiVersion>63.0</apiVersion>
 	<masterLabel>Multi Select Combo Box</masterLabel>
 	<description>A customizable multi-select combobox for Lightning Web Component. Supports validation, pill-based selection, search, and flexible UI configuration.</description>
 </LightningComponentBundle>
