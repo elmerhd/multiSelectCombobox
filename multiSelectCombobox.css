@@ -1,0 +1,169 @@
+:host {
+    display: block;
+}
+
+.multi-select-container {
+    position: relative;
+}
+
+.selector-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 2rem;
+
+    border: 1px solid var(--lwc-colorBorderInput);
+    border-radius: .25rem;
+
+    background: white;
+
+    cursor: pointer;
+    padding: .25rem .5rem;
+}
+
+.selector-container:hover {
+    border-color: var(--lwc-brandAccessible);
+}
+
+.selection-content {
+    flex: 1;
+    overflow: hidden;
+}
+
+.pill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem;
+}
+
+.placeholder {
+    color: var(--lwc-colorTextPlaceholder);
+}
+
+.icon-container {
+
+    display: flex;
+    align-items: center;
+
+    margin-left: .5rem;
+}
+
+.dropdown {
+    position: absolute;
+
+    top: calc(100% + .25rem);
+    left: 0;
+    right: 0;
+
+    z-index: 1000;
+
+    background: white;
+
+    border: 1px solid var(--lwc-colorBorder);
+    border-radius: .25rem;
+
+    box-shadow:
+        0 2px 3px rgba(0,0,0,.16),
+        0 0 3px rgba(0,0,0,.12);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.dropdown-header {
+    padding: .75rem;
+
+    border-bottom: 1px solid var(--lwc-colorBorder);
+
+    background: white;
+
+    flex-shrink: 0;
+}
+
+.dropdown-body {
+    flex: 1;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    min-height: 0;
+
+    padding: .5rem;
+}
+
+.group-select {
+    margin-bottom: .75rem;
+    padding-bottom: .5rem;
+
+    border-bottom: 1px solid var(--lwc-colorBorder);
+}
+
+.footer {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+	margin-left: 0px;
+	margin-right: 0px;
+    padding: .75rem;
+
+    border-top: 1px solid var(--lwc-colorBorder);
+
+    background: white;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        0 -2px 4px rgba(0,0,0,.05);
+}
+
+.footer-actions {
+    display: flex;
+    align-items: center;
+}
+
+
+.selected-counter {
+
+    color: var(--lwc-colorTextWeak);
+    font-size: .75rem;
+}
+
+.action-link {
+    color: var(--lwc-brandAccessible);
+}
+
+.separator {
+    margin: 0 .5rem;
+    color: var(--lwc-colorTextWeak);
+}
+
+.clear-button {
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    margin-right: .5rem;
+}
+
+.slds-text-color_error {
+    color: rgb(234, 0, 30);
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.more-pill {
+    display: inline-flex;
+    align-items: center;
+}

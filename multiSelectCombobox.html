@@ -1,0 +1,115 @@
+<template>
+    <div class="multi-select-container">
+        <div class="slds-form-element">
+            <label if:false={isLabelHidden} class="slds-form-element__label">
+                <abbr if:true={required} class="slds-required" title="required">*</abbr>
+                {label}
+            </label>
+            <!-- Combobox -->
+            <div class="selector-container" onclick={openDropdown}>
+                <div class="selection-content">
+                    <template if:true={selectedOptions.length}>
+                        <div class="pill-container">
+                            <template for:each={visibleSelectedOptions} for:item="opt">
+                                <lightning-pill
+                                    key={opt.value}
+                                    label={opt.label}
+                                    name={opt.value}
+                                    onremove={removeOption}>
+                                </lightning-pill>
+                            </template>
+                            <template if:true={hasMoreSelected}>
+                                <span class="slds-pill slds-pill_link more-pill">
+                                    <span class="slds-pill__label">
+                                        {remainingCountText}
+                                    </span>
+                                </span>
+                            </template>
+                        </div>
+                    </template>
+                    <template if:false={selectedOptions.length}>
+                        <span class="placeholder">
+                           {placeholder}
+                        </span>
+                    </template>
+                </div>
+
+                <div class="icon-container">
+                    <template if:true={selectedCount}>
+                        <button
+                            class="clear-button"
+                            onclick={handleClearSelection}
+                            title="Clear Selection">
+                            <lightning-icon
+                                icon-name="utility:close"
+                                size="xx-small">
+                            </lightning-icon>
+
+                        </button>
+                    </template>
+                    <lightning-icon
+                        icon-name="utility:down"
+                        size="xx-small">
+                    </lightning-icon>
+                </div>
+
+            </div>
+            <!-- Error -->
+            <template if:true={_showError}>
+                <div class="slds-form-element__help slds-text-color_error">
+                    {message}
+                </div>
+            </template>
+            <!-- Dropdown -->
+            <template lwc:if={isOpen}>
+                <div class="dropdown" onclick={preventClose} style={dropdownStyle}>
+                    <div class="dropdown-header">
+                        <lightning-input
+                            type="search"
+                            variant="label-hidden"
+                            placeholder="Search options..."
+                            value={searchKey}
+                            onchange={handleSearch}>
+                        </lightning-input>
+                    </div>
+                    <div class="dropdown-body">
+                        <template for:each={filteredOptions} for:item="opt">
+                            <lightning-input
+                                key={opt.value}
+                                type="checkbox"
+                                label={opt.label}
+                                checked={opt.checked}
+                                data-id={opt.value}
+                                onchange={toggleOption}>
+                            </lightning-input>
+                        </template>
+                    </div>
+                    <div class="footer">
+                        <span class="selected-counter">
+                            {selectedCount} Selected
+                        </span>
+                        <div class="footer-actions">
+                            <button
+                                class="slds-button slds-button_reset action-link"
+                                onclick={selectAll}>
+                                Select All
+                            </button>
+                            <span class="separator">|</span>
+                            <button
+                                class="slds-button slds-button_reset action-link"
+                                onclick={clearAll}>
+                                Clear
+                            </button>
+                            <span class="separator">|</span>
+                            <button
+                                class="slds-button slds-button_reset action-link"
+                                onclick={close}>
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>
