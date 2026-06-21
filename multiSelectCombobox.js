@@ -1,3 +1,8 @@
+/**
+ * @author Elmer Duron | https://www.github.com/elmerhd
+ * @date 2026-06-22
+ * @description Multi-Select Combobox LWC component
+ */
 import { LightningElement, api, track } from 'lwc';
 
 export default class MultiSelectCombobox extends LightningElement {

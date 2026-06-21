@@ -1,3 +1,8 @@
+/*
+@author Elmer Duron | https://www.github.com/elmerhd
+@date 2026-06-22
+@description Styles for multi-select LWC component
+*/
 :host {
     display: block;
 }
