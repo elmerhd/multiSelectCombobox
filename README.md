@@ -202,15 +202,3 @@ handleSubmit() {
 - Multi-category selection
 
 ---
-
-# Behavior Summary
-
-| Feature | Supported |
-|--------|----------|
-| Multi-select | ✅ |
-| Search | ✅ |
-| Pills | ✅ |
-| +(n) more | ✅ |
-| Required validation | ✅ |
-| Custom message | ✅ |
-| LWC validation API | ✅ |
